@@ -4,24 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homework 5</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section id="header">
+  <section class="container-fluid w-100 rounded align-middle text-center bg-info text-white m-1 p-5">
     <h1>Midterm Exam</h1>
-    <h2>Find all prime numbers between two numbers</h2>
+    <p>Find all prime numbers between two numbers</p>
   </section>
   <form>
-    <p>
-      <label for="numberOne">Number 1</label>:
-      <input type="text" name="numberOne" id="numberOne" required>
-    </p>
-    <p>
-      <label for="numberTwo">Number 2</label>:
+    <div id="inputOrder" class="row pl-3">
+    <div id="firstInput" class="col-12 col-md mb-3 pl-3">
+      <div>
+        <label for="numberOne">Number 1:</label>
+      </div>
+      <div>
+        <input type="text" name="numberOne" id="numberOne" required>
+      </div>
+    </div>
+    <div id="secondInput" class="col-12 col-md mb-3 pl-3">
+      <div>
+      <label for="numberTwo">Number 2:</label>
+    </div>
+    <div>
       <input type="text" name="numberTwo" id="numberTwo" required>
-    </p>
-  
-    <input type="submit" value="Submit">
+    </div>
+  </div>
+</div>
+  <div id="button" class="pl-3">
+    <input type="submit" value="Submit" class="btn btn-outline-primary mb-3">
+  </div>
   </form>
 <div id="output"></div>
   <script src="app.js"></script>
