@@ -5,6 +5,8 @@ formElement.addEventListener("submit", e => {
   
   var small;
   var large;
+  let primeNums = [];
+  var k;
 
   if(numOne > numTwo){
     small = numTwo;
@@ -15,25 +17,23 @@ formElement.addEventListener("submit", e => {
   large = numTwo
 }
 
-
   if((numOne < 2 || numOne > 100||numTwo < 2 || numTwo > 100 || isNaN(numOne) || isNaN(numTwo))){document.getElementById("output").innerHTML=`<p>Invalid input, please try again</p>`;}
 
-
-
-
   else {
-    
-    
-    
-    
-    document.getElementById("output").innerHTML=`<p>${small} and ${large}</p>`;}
+    for(var i = small; i<=large;i+=1){
+      k=0
+      for(var j = 2; j<i;j+=1){
+        if(i%j===0){k+=1}
+      }
+      if(k===0){primeNums.push(i)}
+    }
+    document.getElementById("output").innerHTML=`<p>There are ${primeNums.length} prime numbers.</p>`;
+
+    if(primeNums.length > 0){
+      document.getElementById("output").innerHTML+=`<p>${primeNums.toString()}</p>`;
+    }
   
   
-  
-  
-  /*if(pwone!==pwtwo){document.getElementById("passwordHelp").innerHTML = 'Error: The two inputted passwords must be identical.';}
-else if(pwone.length<6){document.getElementById("passwordHelp").innerHTML = 'Error: The minimal password length is 6 characters.';}
-else if(!regex.test(pwone)){document.getElementById("passwordHelp").innerHTML = 'Error: The password must contain at least one digit.';}
-  else {document.getElementById("passwordHelp").innerHTML = 'The sumbission is valid!';}*/
+  }
   e.preventDefault(); 
 });
