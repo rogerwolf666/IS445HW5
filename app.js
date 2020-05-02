@@ -17,7 +17,7 @@ formElement.addEventListener("submit", e => {
     large = numTwo
   }
 
-  if((numOne < 2 || numOne > 100||numTwo < 2 || numTwo > 100 || isNaN(numOne) || isNaN(numTwo))){document.getElementById("output").innerHTML=`<p class="text-danger">Invalid input, please try again</p>`;}
+  if((numOne < 2 || numOne > 100||numTwo < 2 || numTwo > 100 || isNaN(numOne) || isNaN(numTwo))){document.getElementById("output").innerHTML=`<p class="text-danger pl-3">Invalid input, please try again.</p>`;}
 
   else {
     for(var i = small; i<=large;i+=1){
@@ -27,10 +27,10 @@ formElement.addEventListener("submit", e => {
       }
       if(divideCheck===0){primeNums.push(i)}
     }
-    document.getElementById("output").innerHTML=`<p class="text-info">There are ${primeNums.length} prime numbers.</p>`;
+    document.getElementById("output").innerHTML=`<h5 class="text-info pl-3">There are ${primeNums.length} prime numbers.</h5>`;
 
     if(primeNums.length > 0){
-      document.getElementById("output").innerHTML+=`<p class="text-danger font-weight-bold">${primeNums.toString()}</p>`;
+      document.getElementById("output").innerHTML+=`<p class="text-danger font-weight-bold pl-3">${primeNums.toString()}</p>`;
     }
   
   
